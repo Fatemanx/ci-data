@@ -360,7 +360,7 @@ def main() -> None:
     distilled_lora_path = str(materialized / "ltx-2.3-22b-distilled-lora-384.safetensors")
     upsampler_path = str(materialized / "ltx-2.3-spatial-upscaler-x2-1.1.safetensors")
     quantization = resolve_quantization(args.quantization)
-    input_image_path = str(OUT_DIR / "ltx23_ti2v_input.jpg")
+    input_image_path = str(Path(tempfile.gettempdir()) / "ltx23_ti2v_input.jpg")
     if not Path(input_image_path).exists():
         urlretrieve(IMAGE_URL, input_image_path)
 
