@@ -335,10 +335,10 @@ def cuda_memory_snapshot(device: torch.device) -> dict:
     if not torch.cuda.is_available():
         return {}
     return {
-        "memory_allocated": int(torch.cuda.memory_allocated(device)),
-        "memory_reserved": int(torch.cuda.memory_reserved(device)),
-        "max_memory_allocated": int(torch.cuda.max_memory_allocated(device)),
-        "max_memory_reserved": int(torch.cuda.max_memory_reserved(device)),
+        "memory_allocated": int(torch.cuda.memory_allocated()),
+        "memory_reserved": int(torch.cuda.memory_reserved()),
+        "max_memory_allocated": int(torch.cuda.max_memory_allocated()),
+        "max_memory_reserved": int(torch.cuda.max_memory_reserved()),
     }
 
 
@@ -391,7 +391,7 @@ def main() -> None:
     if "ltx_2.3_two_stage_t2v_2gpus" in args.case_ids:
         try:
             if torch.cuda.is_available():
-                torch.cuda.reset_peak_memory_stats(device)
+                torch.cuda.reset_peak_memory_stats()
             print("[ltx-official] generating ltx_2.3_two_stage_t2v_2gpus", flush=True)
             pipe = TI2VidTwoStagesPipeline(
             checkpoint_path=checkpoint_path,
@@ -455,7 +455,7 @@ def main() -> None:
     if "ltx_2.3_one_stage_ti2v" in args.case_ids:
         try:
             if torch.cuda.is_available():
-                torch.cuda.reset_peak_memory_stats(device)
+                torch.cuda.reset_peak_memory_stats()
             print("[ltx-official] generating ltx_2.3_one_stage_ti2v", flush=True)
             pipe = TI2VidOneStagePipeline(
             checkpoint_path=checkpoint_path,
