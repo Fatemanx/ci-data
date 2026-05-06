@@ -68,6 +68,7 @@ class LTXCaseSpec:
     width: int = 768
     num_frames: int = 25
     fps: int = 24
+    seed: int = 42
     images: bool = False
 
 
@@ -80,6 +81,8 @@ CASE_SPECS: dict[str, LTXCaseSpec] = {
         pipeline="two_stage",
         num_gpus=2,
         prompt=T2V_PROMPT,
+        num_frames=24,
+        seed=10,
     ),
     "ltx_2.3_two_stage_t2v_2gpus": LTXCaseSpec(
         repo_id="Lightricks/LTX-2.3",
@@ -120,6 +123,7 @@ CASE_SPECS: dict[str, LTXCaseSpec] = {
         prompt="Doraemon is eating dorayaki",
         height=1024,
         width=1024,
+        num_frames=24,
     ),
 }
 
@@ -543,7 +547,7 @@ def run_case(
     call_kwargs = dict(
         prompt=spec.prompt,
         negative_prompt=DEFAULT_NEGATIVE_PROMPT,
-        seed=42,
+        seed=spec.seed,
         height=height,
         width=width,
         num_frames=num_frames,

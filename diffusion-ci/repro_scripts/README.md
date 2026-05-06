@@ -25,7 +25,7 @@ environment before running gated model cases.
 | `flux_2_ti2i_multi_image_cache_dit` | `native_only_excluded` | `-` | `-` | cache_dit has no upstream official implementation |
 | `flux_image_t2i` | `official_comparable` | `gen_official_diffusion_gt.py` | `run_official_diffusers_cases.sh` | - |
 | `layerwise_offload` | `native_only_excluded` | `-` | `-` | offload behavior has no upstream official implementation |
-| `ltx_2_two_stage_t2v` | `official_comparable` | `gen_official_ltx23.py` | `run_official_ltx23.sh` | LTX-2 official two-stage T2V reference. |
+| `ltx_2_two_stage_t2v` | `official_comparable` | `gen_official_ltx23.py` | `run_official_ltx23.sh` | LTX-2 official two-stage T2V reference using CI-compatible 24-frame output and seed 10. |
 | `ltx_2.3_one_stage_ti2v` | `official_comparable` | `gen_official_ltx23.py` | `run_official_ltx23.sh` | LTX-2.3 official one-stage TI2V reference. |
 | `ltx_2.3_two_stage_t2v_2gpus` | `official_comparable` | `gen_official_ltx23.py` | `run_official_ltx23.sh` | LTX-2.3 official two-stage T2V reference. |
 | `ltx_2_3_hq_pipeline` | `official_comparable` | `gen_official_ltx23.py` | `run_official_ltx23.sh` | LTX-2.3 official HQ two-stage T2V reference at CI resolution. |

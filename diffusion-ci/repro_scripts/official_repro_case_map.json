@@ -155,7 +155,7 @@
       "wrapper": "run_official_ltx23.sh",
       "official_source": "LTX official ltx-pipelines repository with official 19B checkpoint",
       "artifact_dir_used_in_report": "/tmp/mmgen-official-ltx-report",
-      "notes": "Official LTX-2 two-stage T2V GT generated with Lightricks/LTX-2 official 19B checkpoint, official batched guided-denoiser path, AttentionFunction.DEFAULT, and fp8-cast quantization.",
+      "notes": "Official LTX-2 two-stage T2V GT generated with Lightricks/LTX-2 official 19B checkpoint, official batched guided-denoiser path, AttentionFunction.DEFAULT, fp8-cast quantization, CI-compatible 24-frame output, and seed 10.",
       "latest_verified_artifact_dir": "/tmp/mmgen-official-ltx-report"
     },
     {
