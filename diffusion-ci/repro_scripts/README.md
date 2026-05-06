@@ -8,7 +8,7 @@ environment before running gated model cases.
 
 - `gen_official_diffusion_gt.py`: SGLang helper for official Diffusers and Wan2.1 official-repo generation.
 - `gen_official_wan22_ti2v.py`: Wan2.2 official repo TI2V investigation helper; not mapped to the current comparable GT set.
-- `gen_official_ltx23.py`: LTX official repo generator for the covered LTX-2.3 CI cases; verified on H200 with fp8-cast and inference_mode.
+- `gen_official_ltx23.py`: LTX official repo generator for the covered LTX-2/LTX-2.3 CI cases; verified with fp8-cast and inference_mode.
 - `run_official_*.sh`: command wrappers for each official source group.
 - `official_repro_case_map.json`: machine-readable case_id -> script mapping.
 
@@ -25,8 +25,11 @@ environment before running gated model cases.
 | `flux_2_ti2i_multi_image_cache_dit` | `native_only_excluded` | `-` | `-` | cache_dit has no upstream official implementation |
 | `flux_image_t2i` | `official_comparable` | `gen_official_diffusion_gt.py` | `run_official_diffusers_cases.sh` | - |
 | `layerwise_offload` | `native_only_excluded` | `-` | `-` | offload behavior has no upstream official implementation |
-| `ltx_2.3_one_stage_ti2v` | `official_comparable` | `gen_official_ltx23.py` | `run_official_ltx23.sh` | Official GT regenerated successfully on H200; still below current strict thresholds. |
-| `ltx_2.3_two_stage_t2v_2gpus` | `official_comparable` | `gen_official_ltx23.py` | `run_official_ltx23.sh` | Official GT restored; script path is comparable but native alignment is still poor. |
+| `ltx_2_two_stage_t2v` | `official_comparable` | `gen_official_ltx23.py` | `run_official_ltx23.sh` | LTX-2 official two-stage T2V reference. |
+| `ltx_2.3_one_stage_ti2v` | `official_comparable` | `gen_official_ltx23.py` | `run_official_ltx23.sh` | LTX-2.3 official one-stage TI2V reference. |
+| `ltx_2.3_two_stage_t2v_2gpus` | `official_comparable` | `gen_official_ltx23.py` | `run_official_ltx23.sh` | LTX-2.3 official two-stage T2V reference. |
+| `ltx_2_3_hq_pipeline` | `official_comparable` | `gen_official_ltx23.py` | `run_official_ltx23.sh` | LTX-2.3 official HQ two-stage T2V reference at CI resolution. |
+| `ltx_2_3_two_stage_ti2v_2gpus` | `official_comparable` | `gen_official_ltx23.py` | `run_official_ltx23.sh` | LTX-2.3 official two-stage TI2V reference. |
 | `qwen_image_edit_2509_ti2i` | `official_comparable` | `gen_official_diffusion_gt.py` | `run_official_diffusers_cases.sh` | Official reference refreshed with current official Diffusers script. |
 | `qwen_image_edit_2511_ti2i` | `official_comparable` | `gen_official_diffusion_gt.py` | `run_official_diffusers_cases.sh` | - |
 | `qwen_image_edit_ti2i` | `official_comparable` | `gen_official_diffusion_gt.py` | `run_official_diffusers_cases.sh` | - |

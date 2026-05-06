@@ -100,6 +100,33 @@
             "outputs": [
                 "zimage_image_t2i_1gpu.jpg"
             ]
+        },
+        "ltx_2_two_stage_t2v": {
+            "source": "ltx_official_repo",
+            "script": "repro_scripts/gen_official_ltx23.py",
+            "outputs": [
+                "ltx_2_two_stage_t2v_2gpu_frame_0.png",
+                "ltx_2_two_stage_t2v_2gpu_frame_mid.png",
+                "ltx_2_two_stage_t2v_2gpu_frame_last.png"
+            ]
+        },
+        "ltx_2_3_hq_pipeline": {
+            "source": "ltx_official_repo",
+            "script": "repro_scripts/gen_official_ltx23.py",
+            "outputs": [
+                "ltx_2_3_hq_pipeline_1gpu_frame_0.png",
+                "ltx_2_3_hq_pipeline_1gpu_frame_mid.png",
+                "ltx_2_3_hq_pipeline_1gpu_frame_last.png"
+            ]
+        },
+        "ltx_2_3_two_stage_ti2v_2gpus": {
+            "source": "ltx_official_repo",
+            "script": "repro_scripts/gen_official_ltx23.py",
+            "outputs": [
+                "ltx_2_3_two_stage_ti2v_2gpus_2gpu_frame_0.png",
+                "ltx_2_3_two_stage_ti2v_2gpus_2gpu_frame_mid.png",
+                "ltx_2_3_two_stage_ti2v_2gpus_2gpu_frame_last.png"
+            ]
         }
     }
 }

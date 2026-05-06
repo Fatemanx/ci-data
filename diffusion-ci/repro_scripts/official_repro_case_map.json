@@ -17,7 +17,7 @@
   "scripts": [
     {
       "file": "README.md",
-      "sha256": "f3fb1ac1322b2290b4422f5e20e92a2db448e38a3436696f1bc9ebb0fb00f600"
+      "sha256": "62991a093a8c7113851a3dffdae3195ba070a673db8d29d9de9cd4e769af8fe0"
     },
     {
       "file": "build_final_report.py",
@@ -29,7 +29,7 @@
     },
     {
       "file": "gen_official_ltx23.py",
-      "sha256": "2804117676494dcbb6c9b9e35ce6db05b152bcab3d2ecb5ffab72ede0ddf524d"
+      "sha256": "b56a8f2c988f35e812a13f559fbf86901ea003240fc04671576fb5a7fdd5f96e"
     },
     {
       "file": "gen_official_wan22_ti2v.py",
@@ -37,7 +37,7 @@
     },
     {
       "file": "official_repro_case_map.json",
-      "sha256": "993fc842d07ad8575b2a0df209af44fb64df93bb19b5597d491635263cf821f5"
+      "sha256": "86f3f73979d640448154bf301096c7ff97714f7b3349257699a103bd78fabc94"
     },
     {
       "file": "run_official_diffusers_cases.sh",
@@ -45,7 +45,7 @@
     },
     {
       "file": "run_official_ltx23.sh",
-      "sha256": "8de0bb0945264e74b6ee61bbce3258a000542e80808f7c8aa7a4e30ac5923885"
+      "sha256": "5f0322d6e270c862818fccfcabb88a668df0d5744f070c0a6234941bd0a8c665"
     },
     {
       "file": "run_official_wan21.sh",
@@ -148,15 +148,26 @@
       "notes": "offload behavior has no upstream official implementation"
     },
     {
+      "case_id": "ltx_2_two_stage_t2v",
+      "report_status": "official_comparable",
+      "is_official_comparable": true,
+      "repro_script": "gen_official_ltx23.py",
+      "wrapper": "run_official_ltx23.sh",
+      "official_source": "LTX official ltx-pipelines repository with official 19B checkpoint",
+      "artifact_dir_used_in_report": "/tmp/mmgen-official-ltx-report",
+      "notes": "Official LTX-2 two-stage T2V GT generated with Lightricks/LTX-2 official 19B checkpoint, official batched guided-denoiser path, AttentionFunction.DEFAULT, and fp8-cast quantization.",
+      "latest_verified_artifact_dir": "/tmp/mmgen-official-ltx-report"
+    },
+    {
       "case_id": "ltx_2.3_one_stage_ti2v",
       "report_status": "official_comparable",
       "is_official_comparable": true,
       "repro_script": "gen_official_ltx23.py",
       "wrapper": "run_official_ltx23.sh",
       "official_source": "LTX official ltx-pipelines repository with official 22B checkpoint",
-      "artifact_dir_used_in_report": "/tmp/mmgen-official-ltx23-denoiser-default-report",
-      "notes": "Official GT regenerated on H200 against Lightricks/LTX-2 commit 41d9243 with official batched guided-denoiser path and AttentionFunction.DEFAULT; no layer/block streaming or FlashInfer monkeypatch. Use --skip-v2a-cross-attn-for-video-gt only for legacy GT reproduction.",
-      "latest_verified_artifact_dir": "/tmp/mmgen-official-ltx23-denoiser-default-report"
+      "artifact_dir_used_in_report": "/tmp/mmgen-official-ltx-report",
+      "notes": "Official LTX-2.3 one-stage TI2V GT generated with official batched guided-denoiser path, AttentionFunction.DEFAULT, and fp8-cast quantization; no layer/block streaming or FlashInfer monkeypatch.",
+      "latest_verified_artifact_dir": "/tmp/mmgen-official-ltx-report"
     },
     {
       "case_id": "ltx_2.3_two_stage_t2v_2gpus",
@@ -165,9 +176,31 @@
       "repro_script": "gen_official_ltx23.py",
       "wrapper": "run_official_ltx23.sh",
       "official_source": "LTX official ltx-pipelines repository with official 22B checkpoint",
-      "artifact_dir_used_in_report": "/tmp/mmgen-official-ltx23-denoiser-default-report",
-      "notes": "Official GT regenerated on H200 against Lightricks/LTX-2 commit 41d9243 with official batched guided-denoiser path and AttentionFunction.DEFAULT; no layer/block streaming or FlashInfer monkeypatch. Use --skip-v2a-cross-attn-for-video-gt only for legacy GT reproduction.",
-      "latest_verified_artifact_dir": "/tmp/mmgen-official-ltx23-denoiser-default-report"
+      "artifact_dir_used_in_report": "/tmp/mmgen-official-ltx-report",
+      "notes": "Official LTX-2.3 two-stage T2V GT generated with official batched guided-denoiser path, AttentionFunction.DEFAULT, and fp8-cast quantization; no layer/block streaming or FlashInfer monkeypatch.",
+      "latest_verified_artifact_dir": "/tmp/mmgen-official-ltx-report"
+    },
+    {
+      "case_id": "ltx_2_3_hq_pipeline",
+      "report_status": "official_comparable",
+      "is_official_comparable": true,
+      "repro_script": "gen_official_ltx23.py",
+      "wrapper": "run_official_ltx23.sh",
+      "official_source": "LTX official ltx-pipelines repository with official 22B checkpoint and HQ two-stage pipeline",
+      "artifact_dir_used_in_report": "/tmp/mmgen-official-ltx-report",
+      "notes": "Official LTX-2.3 HQ two-stage T2V GT generated at CI resolution with Res2S sampler defaults, AttentionFunction.DEFAULT, and fp8-cast quantization.",
+      "latest_verified_artifact_dir": "/tmp/mmgen-official-ltx-report"
+    },
+    {
+      "case_id": "ltx_2_3_two_stage_ti2v_2gpus",
+      "report_status": "official_comparable",
+      "is_official_comparable": true,
+      "repro_script": "gen_official_ltx23.py",
+      "wrapper": "run_official_ltx23.sh",
+      "official_source": "LTX official ltx-pipelines repository with official 22B checkpoint",
+      "artifact_dir_used_in_report": "/tmp/mmgen-official-ltx-report",
+      "notes": "Official LTX-2.3 two-stage TI2V GT generated with official batched guided-denoiser path, AttentionFunction.DEFAULT, and fp8-cast quantization.",
+      "latest_verified_artifact_dir": "/tmp/mmgen-official-ltx-report"
     },
     {
       "case_id": "qwen_image_edit_2509_ti2i",
